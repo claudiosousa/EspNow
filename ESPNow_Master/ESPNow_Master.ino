@@ -32,6 +32,7 @@
 #include <esp_now.h>
 #include <WiFi.h>
 #include <esp_wifi.h>  // only for esp_wifi_set_channel()
+#include "M5StickCPlus2.h"
 
 // Global copy of slave
 esp_now_peer_info_t slave;
@@ -228,6 +229,7 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
   Serial.println(macStr);
   Serial.print("Last Packet Send Status: ");
   Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+  StickCP2.Power.powerOff();
 }
 
 void setup() {

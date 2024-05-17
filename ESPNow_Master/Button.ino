@@ -1,5 +1,3 @@
-#include "M5StickCPlus2.h"
-
 void setupButton() {
 }
 
